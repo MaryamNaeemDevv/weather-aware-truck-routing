@@ -63,7 +63,7 @@ export default function App() {
     <div className="app">
       <aside className="panel">
         <header className="brand">
-          <h1>Weather-aware truck routing</h1>
+          <h1>Routecast</h1>
           <p>Compare three routes by the weather the truck will actually meet, mile by mile.</p>
         </header>
 

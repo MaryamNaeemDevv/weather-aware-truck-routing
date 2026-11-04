@@ -26,6 +26,9 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
     throw new ApiError(0, "network", "Can't reach the planning server. Check your connection and try again.");
   }
   const body = await res.json().catch(() => null);
+    if (body === null) {
+    throw new ApiError(res.status, "bad_response", "The planning server isn't reachable at this address. Check that the backend is deployed and VITE_API_URL points to it.");
+  }
   if (!res.ok) {
     const e = body?.error;
     throw new ApiError(res.status, e?.code ?? "error", e?.message ?? `Request failed (HTTP ${res.status}).`, e?.fields);
