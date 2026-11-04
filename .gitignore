@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+backend/db.sqlite3
+.env
+# Node
+node_modules/
+frontend/dist/
+*.log
+.DS_Store
